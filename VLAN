@@ -1,0 +1,186 @@
+VLAN Creation & Assigning on the switch 0
+
+Switch>enable
+Switch#configure terminal
+Switch(config)#line console 0
+Switch(config-line)#password cisco
+Switch(config-line)#login
+Switch(config-line)#exit
+
+Switch(config)#enable password cisco
+Switch(config)#enable secret cisco1
+Switch(config)#exit
+
+Switch#configure terminal
+Switch(config)#line vty 4 15
+Switch(config-line)#password cisco
+Switch(config-line)#exit
+Switch(config)#^Z
+
+Switch#configure terminal
+Switch(config)#vlan 30
+Switch(config-vlan)#name HR
+Switch(config-vlan)#exit
+Switch(config)#^Z
+
+Switch#configure terminal
+Switch(config)#interface fastEthernet 0/2
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 30
+
+Switch(config)#interface fastEthernet 0/3
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 30
+
+Switch(config)#interface fastEthernet 0/4
+Switch(config-if)#switchport mode access
+
+Switch(config-if)#switchport access vlan 30
+Switch(config)#interface fastEthernet 0/10
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk allowed vlan 1-99
+
+VLAN Creation & Assigning on the switch 1
+
+
+Switch>enable
+Switch#configure terminal
+Switch(config)#line console 0
+Switch(config-line)#password cisco
+Switch(config-line)#login
+Switch(config-line)#exit
+
+Switch(config)#enable password cisco
+Switch(config)#enable secret cisco1
+Switch(config)#exit
+
+Switch#configure terminal
+Switch(config)#line vty 4 15
+Switch(config-line)#password cisco
+Switch(config-line)#exit
+Switch(config)#^Z
+
+Switch#configure terminal
+
+Switch(config-if)#vlan 10
+Switch(config-vlan)#name ECE
+Switch(config-vlan)#exit
+
+Switch(config)#vlan 20
+Switch(config-vlan)#name IT
+Switch(config-vlan)#exit
+
+Switch(config)#vlan 30
+Switch(config-vlan)#name HR
+Switch(config-vlan)#exit
+Switch(config)#^Z
+
+Switch#configure terminal
+Switch(config)#interface fastEthernet 0/1
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 10
+
+
+Switch(config)#interface fastEthernet 0/2
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 10
+
+Switch(config)#interface fastEthernet 0/3
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 10
+
+
+Switch(config)#interface fastEthernet 0/4
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 20
+
+Switch(config)#interface fastEthernet 0/5
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 20
+
+Switch(config)#interface fastEthernet 0/6
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 20
+
+Switch(config)#interface fastEthernet 0/7
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 30
+
+Switch(config)#interface fastEthernet 0/10
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk allowed vlan 1-99
+
+
+Switch(config)#interface fastEthernet 0/11
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk allowed vlan 1-99
+
+Switch(config)#interface fastEthernet 0/11
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk allowed vlan 10,20,30
+
+
+
+VLAN Creation & Assigning on the switch 2
+
+Switch>enable
+Switch#configure terminal
+Switch(config)#line console 0
+Switch(config-line)#password cisco
+Switch(config-line)#login
+Switch(config-line)#exit
+
+Switch(config)#enable password cisco
+Switch(config)#enable secret cisco1
+Switch(config)#exit
+
+Switch#configure terminal
+Switch(config)#line vty 4 15
+
+Switch(config-line)#password cisco
+Switch(config-line)#exit
+Switch(config)#^Z
+
+Switch#configure terminal
+Switch(config-if)#vlan 10
+Switch(config-vlan)#name ECE
+Switch(config-vlan)#exit
+
+
+
+Switch(config)#vlan 20
+Switch(config-vlan)#name IT
+Switch(config-vlan)#exit
+Switch(config)#^Z
+
+Switch#configure terminal
+Switch(config)#interface fastEthernet 0/1
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 20
+
+Switch(config)#interface fastEthernet 0/2
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 20
+
+Switch(config)#interface fastEthernet 0/3
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 20
+
+
+Switch(config)#interface fastEthernet 0/4
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 10
+
+Switch(config)#interface fastEthernet 0/5
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 10
+
+
+Switch(config)#interface fastEthernet 0/6
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 10
+
+
+Switch(config)#interface fastEthernet 0/11
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk allowed vlan 1-99
