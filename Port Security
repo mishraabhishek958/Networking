@@ -1,0 +1,85 @@
+Commands for the Port Security on the switch 1:
+
+Switch(config)#int f0/1
+
+Switch(config-if)#switchport mode access
+
+Switch(config-if)#switchport port-security
+
+Switch(config-if)#switchport port-security mac-address 000C.8533.968A
+
+Switch(config-if)#switchport port-security max
+
+Switch(config-if)#switchport port-security maximum 1
+
+Switch(config-if)#switchport port-security violation shutdown
+
+
+Switch(config-if)#int f0/2
+
+Switch(config-if)#switchport mode access
+
+Switch(config-if)#switchport port-security
+
+Switch(config-if)#switchport port-security mac-address 0003.E45C.A97E
+
+Switch(config-if)#switchport port-security maximum 1
+
+Switch(config-if)#switchport port-security violation shutdown
+
+
+Switch(config-if)#int f0/3
+
+Switch(config-if)#switchport mode access
+
+Switch(config-if)#switchport port-security
+
+Switch(config-if)#switchport port-security mac-address 000A.41EA.7918
+
+Switch(config-if)#switchport port-security maximum 1
+
+Switch(config-if)#switchport port-security violation shutdown
+
+
+Switch(config-if)#int f0/4
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport port-security
+Switch(config-if)#switchport port-security mac-address 000B.BE4A.09D1
+Switch(config-if)#switchport port-security maximum 1
+Switch(config-if)#switchport port-security violation shutdown
+
+
+Switch(config-if)#int f0/5
+Switch(config-if)#switchport mode access
+
+Switch(config-if)#switchport port-security
+
+Switch(config-if)#switchport port-security mac-address 00E0.A36C.2BAB
+
+Switch(config-if)#switchport port-security maximum 1
+
+Switch(config-if)#switchport port-security violation shutdown
+
+
+Switch(config-if)#int f0/6
+
+Switch(config-if)#switchport mode access
+
+Switch(config-if)#switchport port-security
+
+Switch(config-if)#switchport port-security mac-address 000A.F378.C06B
+
+Switch(config-if)#switchport port-security maximum 1
+
+Switch(config-if)#switchport port-security violation shutdown
+
+
+Switch(config-if)#int f0/7
+
+Switch(config-if)#switchport mode access
+
+Switch(config-if)#switchport port-security
+
+Switch(config-if)#switchport port-security mac-address 0000.0C69.D67B
+Switch(config-if)#switchport port-security maximum 1 
+Switch(config-if)#switchport port-security violation shutdown
