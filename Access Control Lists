@@ -1,0 +1,24 @@
+Access Control List configuration on the Router:
+
+Router(config)#access-list 105 deny ip host 192.168.30.10 host 192.168.20.4 
+Router(config)#access-list 105 permit ip any any
+Router(config)#int fa 0/0.30
+
+Router(config-if)#ip access-group 105 in
+
+Router(config)# access-list 101 deny icmp 192.168.10.0 0.0.0.255 host 192.168.40.3
+
+Router(config)# access-list 101 permit ip any any
+
+Router(config)# access-list 102 deny tcp 192.168.20.0 0.0.0.255 host 192.168.40.3 eq www
+Router(config)# access-list 102 permit ip any any
+
+
+Router(config)#int fa 0/0.10
+
+Router(config-if)#ip access-group 101 in
+Router(config-if)#exit
+
+
+Router(config)#int fa 0/0.20
+Router(config-if)#ip access-group 102 in
